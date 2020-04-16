@@ -32,7 +32,6 @@ const burger = (props) => {
             <BurgerIngredient type="bread-top"/>
             {transformedIngedients}
             <BurgerIngredient type="bread-bottom"/>
-            <p>Total price: ${props.totalPrice.toFixed(2)}</p>
         </div>
     );
 }
