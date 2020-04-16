@@ -10,7 +10,7 @@ const burger = (props) => {
     // - The array is sized using the value from the map for an item, say cheese: 2.
     // - Each element in each array is mapped to an array of BurgerIngredient and 
     //   the ingredient is returned.
-    // - Finally the separate arrays are reduced (flattened) to a single array.
+    // - Finally the separate arrays are reduced (flattened) to a single array. 
     let transformedIngedients = Object.keys(props.ingredients)
         .map( (igkey) => {
             return [...Array(props.ingredients[igkey])]
