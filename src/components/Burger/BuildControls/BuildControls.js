@@ -11,8 +11,11 @@ const controls = [
 
 const buildControls = (props) => {
     return (
+        <Fragment>
+        
+        
+        
         <div className={classes.BuildControls}>
-        <p>Total price: <strong>${props.totalPrice.toFixed(2)}</strong></p>
             {controls.map(ctrl => (
                 <BuildControl 
                     label={ctrl.label} 
@@ -21,11 +24,13 @@ const buildControls = (props) => {
                     ingredientRemover={() => props.ingredientRemover(ctrl.type)}  
                     removerDisabled={props.ingredientCounts[ctrl.type] <= 0} />
             ))}
+            <p>Total price: <strong>${props.totalPrice.toFixed(2)}</strong></p>
             <button 
                 className={classes.OrderButton} 
                 disabled={!props.purchasable}
                 onClick={props.ordered}> ORDER NOW</button>
         </div>
+        </Fragment>
     )
 }
 
