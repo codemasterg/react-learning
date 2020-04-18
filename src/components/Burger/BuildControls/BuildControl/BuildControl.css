@@ -1,5 +1,6 @@
 .BuildControl {
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
     margin: 2px 0;
