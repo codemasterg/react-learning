@@ -2,27 +2,19 @@ import React, { Fragment } from 'react';
 import BuildControl from './BuildControl/BuildControl'
 import classes from './BuildControls.css'
 
-const controls = [
-    {label: 'Salad', type: 'salad'},
-    {label: 'Bacon', type: 'bacon'},
-    {label: 'Cheese', type: 'cheese'},
-    {label: 'Meat', type: 'meat'},
-]
 
 const buildControls = (props) => {
     return (
         <Fragment>
-        
-        
-        
         <div className={classes.BuildControls}>
-            {controls.map(ctrl => (
+            {Object.entries(props.prices).map(item => (
                 <BuildControl 
-                    label={ctrl.label} 
-                    key={ctrl.label}
-                    ingredientAdder={() => props.ingredientAdder(ctrl.type)}
-                    ingredientRemover={() => props.ingredientRemover(ctrl.type)}  
-                    removerDisabled={props.ingredientCounts[ctrl.type] <= 0} />
+                    label={item[0]} 
+                    price={item[1]}
+                    key={item[0]}
+                    ingredientAdder={() => props.ingredientAdder(item[0])}
+                    ingredientRemover={() => props.ingredientRemover(item[0])}  
+                    removerDisabled={props.ingredientCounts[item[0]] <= 0} />
             ))}
             <p>Total price: <strong>${props.totalPrice.toFixed(2)}</strong></p>
             <button 

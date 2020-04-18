@@ -40,6 +40,7 @@ class BurgerBuilder extends Component {
                 <BuildControls 
                     ingredientAdder={this.addIngredientHandler}
                     ingredientRemover={this.removeIngredientHandler}
+                    prices={INGREDIENT_PRICES}
                     totalPrice={this.state.totalPrice}
                     // pass in ingredients counts to enable / disable remove button
                     ingredientCounts={this.state.ingredients}
